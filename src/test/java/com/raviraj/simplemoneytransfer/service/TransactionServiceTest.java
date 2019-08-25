@@ -82,7 +82,7 @@ public class TransactionServiceTest {
 		 tr.setAmount(10);
 		 tr.setCreditAccountId(1);
 		 tr.setDebitAccountId(2);
-		 tr.setTransactionId(1);
+		 tr.setTransactionId(6);
 		 
 		 String jsonString = new Gson().toJson(tr);
 		 final StringEntity stringEntity = new StringEntity(jsonString);
@@ -103,7 +103,7 @@ public class TransactionServiceTest {
          assertEquals(2.0, acc.get("debitAccountId"));
          assertEquals(10.0, acc.get("amount"));
          
-         HttpGet request = new HttpGet("http://localhost:1000/moneytransfertest/transactions/1");
+         HttpGet request = new HttpGet("http://localhost:1000/moneytransfertest/transactions/6");
          HttpResponse res2 = httpClient.execute(request);
          assertEquals(200, res2.getStatusLine().getStatusCode());
          String response2 = EntityUtils.toString(res2.getEntity());
@@ -122,7 +122,7 @@ public class TransactionServiceTest {
 		 tr.setAmount(10);
 		 tr.setCreditAccountId(1);
 		 tr.setDebitAccountId(2);
-		 tr.setTransactionId(2);
+		 tr.setTransactionId(7);
 		 
 		 
 		 String jsonString = new Gson().toJson(tr);

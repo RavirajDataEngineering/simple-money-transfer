@@ -1,6 +1,6 @@
 # simple-money-transfer
-Simple Money Transfer RESTful API . Supports concurrent transfer requests across multiple accounts  
-using In-Memory-Database.
+Simple Money Transfer RESTful API . Threadsafe implentation that  supports transfers across multiple accounts  
+using inmemory database
 
 ## Running Instructions.
 

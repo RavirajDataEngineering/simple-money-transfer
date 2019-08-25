@@ -30,7 +30,7 @@ import com.raviraj.simplemoneytransfer.database.model.Transaction;
 
 @TestMethodOrder(OrderAnnotation.class)
 public class TransactionServiceTest {
-	static Server server = new Server(1000);
+	static Server server = new Server(1001);
 	
 	@BeforeAll
 	public static void init() {

@@ -68,7 +68,7 @@ public class TransactionServiceTest {
 	@DisplayName("Test Get Transaction Gives 404 when account doesnt exist")
 	public void testGetAccountW() throws ClientProtocolException, IOException {
 		 DefaultHttpClient httpClient = new DefaultHttpClient();
-		 HttpGet getRequest = new HttpGet("http://localhost:1001/moneytransfertest/transactions/1");
+		 HttpGet getRequest = new HttpGet("http://localhost:1001/moneytransfertest/transactions/1000");
 		 HttpResponse response = httpClient.execute(getRequest);
 		 assertEquals(404, response.getStatusLine().getStatusCode());
 	}

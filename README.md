@@ -4,6 +4,7 @@ Simple Money Transfer RESTful API
 Running Instructions.
 
 1 . mvn clean install
+
 2. Java -jar target/SimpleMoneyTransferjar.jar
 
 API's Supported.

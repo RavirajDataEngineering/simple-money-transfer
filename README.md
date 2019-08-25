@@ -10,7 +10,8 @@ Running Instructions.
 API's Supported.
 
 1. GET Account
-   http://localhost:5555/moneytransfer/accounts/{accountId} ex: http;//localhost:5555/accounts/1
+   http://localhost:5555/moneytransfer/accounts/{accountId}  ex: http;//localhost:5555/accounts/1
+   
 2. POST request to create account
    http://localhost:5555/moneytransfer/accounts 
    payload : {"accountId":1,"userId":"raviraj","balance":100}

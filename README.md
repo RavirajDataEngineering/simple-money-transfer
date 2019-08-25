@@ -1,12 +1,13 @@
 # simple-money-transfer
-Simple Money Transfer RESTful API
+Simple Money Transfer RESTful API . Supports concurrent transfer requests across multiple accounts  
+using In-Memory-Database.
 
-Running Instructions.
+## Running Instructions.
 
 1. mvn clean install    
 2. Java -jar target/SimpleMoneyTransferjar.jar
 
-API's Supported.
+## API's Supported.
 
 1. GET Account  
    http://localhost:5555/moneytransfer/accounts/{accountId}  ex: http;//localhost:5555/accounts/1
@@ -29,3 +30,13 @@ API's Supported.
     payload: {"creditAccountId":1,"debitAccountId":2,"transactionId":1,"amount":10}  
 8. DELETE a transaction  
    http://localhost:5555/moneytransfer/transactions/{tranactionId}
+
+## Http status
+- 200 OK
+- 400 Bad request
+- 404 Not found
+- 500 Internal Server Error
+
+#Notes
+- Ignoring different currenices across multiple accounts. assuming all accounts of same currency.
+

@@ -66,7 +66,9 @@ public class TransactionService {
 				}
 			}
 			TransactionValidator.validateTransaction(tr);
-			tr = TransactionUtil.buildTransaction(tr);
+			if (!(tr.getTransactionId() > 0)) {
+				tr = TransactionUtil.buildTransaction(tr);
+			}
 			transactionDao.addTransaction(tr);
 			return Response.ok(tr).build();
 		} catch (ValidationException ex) {

@@ -68,7 +68,7 @@ public class TransactionServiceTest {
 	@DisplayName("Test Get Transaction Gives 404 when account doesnt exist")
 	public void testGetAccountW() throws ClientProtocolException, IOException {
 		 DefaultHttpClient httpClient = new DefaultHttpClient();
-		 HttpGet getRequest = new HttpGet("http://localhost:1000/moneytransfertest/transactions/1");
+		 HttpGet getRequest = new HttpGet("http://localhost:1001/moneytransfertest/transactions/1");
 		 HttpResponse response = httpClient.execute(getRequest);
 		 assertEquals(404, response.getStatusLine().getStatusCode());
 	}
@@ -77,7 +77,7 @@ public class TransactionServiceTest {
 	@DisplayName("Test Add Transaction by post and Succesfully Get it  by Get")
 	public void testAddAccount() throws ClientProtocolException, IOException {
 		 DefaultHttpClient httpClient = new DefaultHttpClient();
-		 final HttpPost httpPost = new HttpPost("http://localhost:1000/moneytransfertest/transactions");
+		 final HttpPost httpPost = new HttpPost("http://localhost:1001/moneytransfertest/transactions");
 		 Transaction tr = new Transaction();
 		 tr.setAmount(10);
 		 tr.setCreditAccountId(1);
@@ -103,7 +103,7 @@ public class TransactionServiceTest {
          assertEquals(2.0, acc.get("debitAccountId"));
          assertEquals(10.0, acc.get("amount"));
          
-         HttpGet request = new HttpGet("http://localhost:1000/moneytransfertest/transactions/6");
+         HttpGet request = new HttpGet("http://localhost:1001/moneytransfertest/transactions/6");
          HttpResponse res2 = httpClient.execute(request);
          assertEquals(200, res2.getStatusLine().getStatusCode());
          String response2 = EntityUtils.toString(res2.getEntity());
@@ -117,7 +117,7 @@ public class TransactionServiceTest {
 	@DisplayName("Adding already exisitng transaction fails with 400")
 	public void testAddAlreadyExistingAccount() throws ClientProtocolException, IOException {
 		 DefaultHttpClient httpClient = new DefaultHttpClient();
-		 final HttpPost httpPost = new HttpPost("http://localhost:1000/moneytransfertest/transactions");
+		 final HttpPost httpPost = new HttpPost("http://localhost:1001/moneytransfertest/transactions");
 		 Transaction tr = new Transaction();
 		 tr.setAmount(10);
 		 tr.setCreditAccountId(1);
@@ -144,7 +144,7 @@ public class TransactionServiceTest {
 	@DisplayName("Adding invalid Transaction gives a Invalid request response")
 	public void testAddInvalidAccount() throws ClientProtocolException, IOException {
 		DefaultHttpClient httpClient = new DefaultHttpClient();
-		 final HttpPost httpPost = new HttpPost("http://localhost:1000/moneytransfertest/transactions");
+		 final HttpPost httpPost = new HttpPost("http://localhost:1001/moneytransfertest/transactions");
 		 Transaction tr = new Transaction();
 		 tr.setAmount(10);
 		 tr.setCreditAccountId(1);
